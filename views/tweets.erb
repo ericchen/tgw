@@ -1,0 +1,22 @@
+<div class="toolbar">
+        <h1 id="pageTitle"></h1>
+        <a id="backButton" class="button" href="#"></a>
+</div>
+
+    <ul title="Tweets" selected="true">
+	<% @timelines.each do |tweet| %>	
+        <li>
+            <span class="pepole"><img src="<%= tweet.user.profile_image_url %>" border='0' alt="<%= tweet.user.screen_name %>"><a href='http://tgw.heroku.com/user/<%= tweet.user.screen_name %>' target='_blank'><%= tweet.user.screen_name %></a></span>
+            <span class="text">
+			<% if tweet.text =~ /https?:\/\/[^\s]+/ %>
+				<%= tweet.text.gsub!(/(https?:\/\/[^\s]+)/) {|m| "<a href='/goto?url=#{$1}' target='_blank'>#{$1}</a>"} %>
+			<% else %>
+			<%= tweet.text %>
+		    <% end %>
+</span>
+			<span class='at'>about <%= Time.parse(tweet.created_at.to_s).to_pretty %></span>
+        </li>
+
+	<%  end %>	
+	<li><a target="_replace" href="/<%= @page || 1 %>" selected="progress">Get 20 More Stories...</a></li>
+</ul>

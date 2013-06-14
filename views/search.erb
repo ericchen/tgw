@@ -1,0 +1,23 @@
+<div class="toolbar">
+        <h1 id="pageTitle"></h1>
+        <a id="backButton" class="button" href="#"></a>
+</div>
+
+    <ul title="Tweets" selected="true">
+	<% @tweets.each do |tweet| %>	
+        <li>
+            <span class="pepole"><%= tweet.from_user %></span>
+            <span class="text">
+			<% if tweet.text =~ /http:\/\/[^\s]+/ %>
+				<%= tweet.text.gsub!(/(http:\/\/[^\s]+)/) {|m| "<a href='/goto?url=#{$1}' target='_blank'>#{$1}</a>"} %>
+			<% else %>
+			<%= tweet.text %>
+		    <% end %>
+</span>
+			<span class='at'>about <%= Time.parse(tweet.created_at).to_pretty %></span>
+			
+        </li>
+
+	<%  end %>	
+	<li><a target="_replace" href="/<%= @page || 1 %>" selected="progress">Get 20 More Stories...</a></li>
+</ul>

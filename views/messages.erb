@@ -1,0 +1,9 @@
+<div>
+	<ul>
+	<% @status.each do |st| %>	
+		<li><%= st.user.screen_name %> &nbsp;<%= st.text %>&nbsp;at:<%= DateTime.strftime("%Y-%m-%d-%I:%M%p", st.created_at) %></li>
+	 <%  end %>	
+	</ul>
+	
+	
+</div>

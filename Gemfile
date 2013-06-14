@@ -1,0 +1,5 @@
+source 'http://ruby.taobao.org/'
+gem 'sinatra'
+gem 'twitter'
+gem 'httpclient'
+gem 'mechanize'

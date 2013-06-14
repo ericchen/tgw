@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Proxy</title>
+</head>
+
+
+<style>
+body{ font-size:12px; font-family:Lucida Grande,Geneva,Arial,Trebuchet,Verdana,Helvetica,Sans-Serif;color:#484848;padding:0; margin:0;}
+*{ padding:0; margin:0;}
+.test{ width:980px; margin:0 auto;}
+.test dl{ clear:both; margin-top:10px; }
+.test dl dt{ float:left; line-height:27px;width:200px;}
+.test dl dd{ float:left; margin-left:10px;}
+.control {margin-left:60px;}
+.devices_details_thermostat {margin-left:0px;}
+.devices_details_thermostat dl {clear:none;}
+</style>
+
+<body>
+<div class="test">
+<form method="post" action="/crypt/url">
+  <dl>
+	<dt>URL</dt>
+	<dd><input type="text" name="url" id="url" style="height:25px;line-height:25px;width:200px;"></dd>
+	<dd><input type="submit" value="Proxy"></dd>
+  </dl>
+</form>
+
+<form method="post" action="proxy">
+  <dl>
+	<dt>URL</dt>
+	<dd><input type="text" name="url" id="url" style="height:25px;line-height:25px;width:200px;"></dd>
+	<dd><input type="submit" value="Post Proxy"></dd>
+  </dl>
+</form>
+</div>
+</body>
+</html>
